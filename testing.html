@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produk | MBAKO LINTING</title>
+
+  <link rel="icon" type="image/jpeg" href="gambar/logo toko/logo.jpg" />
+  <meta name="description" content="Katalog Produk MBAKO LINTING: papir/kertas linting, filter/busa rokok, alat linting, aksesoris. Checkout via WhatsApp." />
+  <meta name="keywords" content="MBAKO LINTING, produk mbako linting, katalog linting, papir, kertas linting, filter rokok, busa rokok, alat linting" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pasarbako.netlify.app/produk.html" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    header.nav-top{background:#fff;border-bottom:1px solid #eee;padding:0;margin:0}
+    header.nav-top .nav-wrap{max-width:1200px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    header.nav-top .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#f97316;font-weight:800}
+    header.nav-top .nav-logo{width:44px;height:44px;border-radius:10px;object-fit:cover;display:block}
+    header.nav-top .nav-brand-name{font-size:16px;font-weight:800;white-space:nowrap}
+    header.nav-top .nav-center{display:flex;align-items:center;gap:28px}
+    header.nav-top .nav-link{text-decoration:none;font-weight:700;color:#f97316;padding:8px 10px;border-radius:10px}
+    header.nav-top .nav-link:hover{background:rgba(249,115,22,.10)}
+    header.nav-top .nav-right{display:flex;align-items:center;gap:14px}
+    header.nav-top .nav-icon{border:none;background:transparent;cursor:pointer;padding:8px 10px;border-radius:10px;font-size:18px;display:inline-flex;align-items:center;gap:6px;color:#f97316;text-decoration:none}
+    header.nav-top .nav-icon:hover{background:rgba(249,115,22,.10)}
+    header.nav-top .nav-badge{min-width:18px;height:18px;border-radius:999px;background:#16a34a;color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px}
+    header.nav-top .nav-login{text-decoration:none;font-weight:700;color:#f97316;padding:8px 10px;border-radius:10px}
+    header.nav-top .nav-login:hover{background:rgba(249,115,22,.10)}
+    @media (max-width:860px){ header.nav-top .nav-center{display:none} }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav-top">
+    <div class="nav-wrap">
+
+      <a class="nav-brand" href="index.html">
+        <img src="gambar/logo toko/logo.jpg" alt="MBAKO LINTING" class="nav-logo" />
+        <span class="nav-brand-name">MBAKO LINTING</span>
+      </a>
+
+      <nav class="nav-center" aria-label="Menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="produk.html" class="nav-link">Produk</a>
+        <a href="index.html#kontak" class="nav-link">Kontak Kami</a>
+        <a href="mbako-linting.html" class="nav-link">Tentang Kami</a>
+      </nav>
+
+      <div class="nav-right">
+        <!-- CART HANYA ADA DI HALAMAN PRODUK -->
+        <button id="cart-float" class="nav-icon" type="button" title="Keranjang">
+          🛒 <span id="cart-count" class="nav-badge">0</span>
+        </button>
+        <button class="nav-icon" type="button" title="Cari" onclick="window.scrollTo({top:0,behavior:'smooth'})">🔍</button>
+        <a href="#" class="nav-icon" title="Akun">👤</a>
+        <a href="#" class="nav-login">Login</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="section">
+    <h1 class="section-title">Kategori Produk</h1>
+
+    <div class="kategori-box" id="kategoriBox">
+      <button class="kategori-item" onclick="openKategori('PAPIR / KERTAS LINTING')">PAPIR / KERTAS LINTING</button>
+      <button class="kategori-item" onclick="openKategori('ALAT LINTING')">ALAT LINTING</button>
+      <button class="kategori-item" onclick="openKategori('BUSA / FILTER / SPONS')">BUSA / FILTER / SPONS</button>
+      <button class="kategori-item" onclick="openKategori('TEMBAKAU NUSANTARA')">TEMBAKAU NUSANTARA</button>
+      <button class="kategori-item" onclick="openKategori('AKSESORIS ROKOK')">AKSESORIS ROKOK</button>
+      <button class="kategori-item" onclick="openKategori('DLL')">DLL</button>
+    </div>
+
+    <h2 id="judulKategori" class="judul-kategori" style="display:none;"></h2>
+    <div class="products" id="productGrid" style="display:none;"></div>
+
+    <article id="detail-box" class="detail-panel hidden" aria-hidden="true">
+      <button class="back-btn" onclick="backToProduk()">◀ Kembali</button>
+
+      <div id="detail-content" class="detail-content">
+        <div class="gallery-box">
+          <img id="detailImg" class="main-img" src="" alt="Gambar Detail Produk" />
+          <div id="thumbContainer" class="thumb-row"></div>
+        </div>
+
+        <aside class="right-col">
+          <h2 id="detailNama">Nama Produk</h2>
+          <p class="merk-top"><strong>Merk:</strong> <span id="detailMerk"></span></p>
+          <div class="price" id="detailPrice">Rp 0</div>
+          <p class="lead" id="detailLead">Ringkasan singkat produk.</p>
+          <div class="full-desc" id="detailDesk"></div>
+
+          <div class="specs">
+            <p><strong>Rasa:</strong> <span id="detailRasa"></span></p>
+            <p><strong>Isi:</strong> <span id="detailIsi"></span></p>
+            <p><strong>Size:</strong> <span id="detailSize"></span></p>
+            <p><strong>Berat:</strong> <span id="detailBerat"></span></p>
+            <p><strong>Stok:</strong> <span id="detailStock"></span></p>
+          </div>
+
+          <div class="actions">
+            <div class="qty">
+              <button class="btn ghost" type="button" onclick="changeDetailQty(-1)">-</button>
+              <input id="detailQty" type="number" value="1" min="1" />
+              <button class="btn ghost" type="button" onclick="changeDetailQty(1)">+</button>
+            </div>
+            <button id="detailAddCart" class="btn" type="button">+ Keranjang</button>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <!-- CART PANEL -->
+  <div id="cart-panel" class="overlay">
+    <div id="cart-box" class="cart-box">
+      <h2>Keranjang</h2>
+      <div id="cart-items"></div>
+      <h3>Total: Rp <span id="cart-total">0</span></h3>
+      <button id="checkout" class="checkout-btn" type="button">Checkout</button>
+      <button id="close-cart" class="close-btn" type="button">Tutup</button>
+    </div>
+  </div>
+
+  <!-- ALAMAT PANEL -->
+  <div id="alamat-panel" class="overlay">
+    <div class="alamat-box">
+      <h2>Masukkan Data Pengiriman</h2>
+
+      <input type="hidden" id="nama-pengirim" value="MBAKO LINTING" />
+
+      <label for="nama-penerima">Nama Penerima:</label>
+      <input id="nama-penerima" type="text" placeholder="Nama penerima..." />
+
+      <label for="alamat-input">Alamat Pengiriman:</label>
+      <input id="alamat-input" placeholder="Ketik alamat lengkap…" />
+
+      <label for="jenis-ongkir">Jenis Ongkir:</label>
+      <select id="jenis-ongkir">
+        <option>Reguler</option>
+        <option>Sameday</option>
+        <option>Cargo</option>
+      </select>
+
+      <label for="kurir">Pilih Kurir:</label>
+      <select id="kurir">
+        <option>JNE</option>
+        <option>JNT</option>
+      </select>
+
+      <label for="payment">Pilih Metode Pembayaran:</label>
+      <select id="payment">
+        <option>E-Wallet</option>
+        <option>Transfer Bank</option>
+        <option>Qris</option>
+      </select>
+
+      <button id="confirm-alamat" class="alamat-btn" type="button">Kirim via WhatsApp</button>
+      <button id="close-alamat" class="alamat-btn" type="button">Batal</button>
+    </div>
+  </div>
+
+  <footer>© 2025 Toko Bako Linting - Semua hak dilindungi.</footer>
+
+  <script src="script.js"></script>
+  <script src="stock-barang.js"></script>
+</body>
+</html>

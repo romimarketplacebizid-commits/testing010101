@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Website Sedang Maintenance</title>
+<style>
+:root {
+  --primary: #2563eb;
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --radius-xl: 1.5rem;
+}
+body {
+  min-height: 100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: var(--bg);
+  font-family: system-ui, sans-serif;
+  margin:0;
+  padding:1rem;
+  color: var(--text-main);
+}
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding:2rem;
+  width:100%;
+  max-width:600px;
+  text-align:center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  position: relative;
+}
+.logo img {
+  width:120px;
+  margin-bottom:1rem;
+}
+h1 {
+  font-size:1.8rem;
+  margin-bottom:0.8rem;
+  color:white;
+}
+.subtitle {
+  font-size:1rem;
+  margin-bottom:1rem;
+  line-height:1.6;
+  color: var(--text-muted);
+}
+.countdown-box {
+  background:#111827;
+  padding:0.7rem 1rem;
+  border-radius:1rem;
+  display:inline-block;
+  margin:1rem 0;
+  font-size:1.05rem;
+  font-weight:600;
+  color:#38bdf8;
+}
+.buttons {
+  margin-top:0.7rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+  align-items:center;
+}
+.whatsapp-btn,
+.refresh-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  border-radius:999px;
+  font-weight:600;
+  font-size:0.95rem;
+  padding:0.6rem 1.2rem;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+}
+.whatsapp-btn {
+  background:#25D366;
+  color:white;
+}
+.refresh-btn {
+  background:transparent;
+  color:#e5e7eb;
+  border:1px solid #4b5563;
+}
+.whatsapp-btn:hover,
+.refresh-btn:hover {
+  opacity:0.9;
+}
+.refresh-status {
+  font-size:0.8rem;
+  color: var(--text-muted);
+}
+.footer {
+  margin-top:1.5rem;
+  font-size:0.85rem;
+  color: var(--text-muted);
+}
+
+/* Popup / modal selesai maintenance */
+.modal-overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,0.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:50;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity 0.2s ease, visibility 0.2s ease;
+}
+.modal-overlay.show {
+  visibility:visible;
+  opacity:1;
+}
+.modal {
+  background:#020617;
+  border-radius:1.25rem;
+  padding:1.75rem 1.5rem;
+  max-width:380px;
+  width:90%;
+  text-align:center;
+  border:1px solid #38bdf8;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+.modal-title {
+  font-size:1.25rem;
+  margin-bottom:0.4rem;
+}
+.modal-body {
+  font-size:0.95rem;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+}
+.modal button {
+  border:none;
+  border-radius:999px;
+  padding:0.6rem 1.4rem;
+  font-weight:600;
+  cursor:pointer;
+}
+.modal .btn-primary {
+  background:#22c55e;
+  color:white;
+}
+.modal .btn-secondary {
+  background:transparent;
+  color:#e5e7eb;
+  border:1px solid #4b5563;
+  margin-left:0.5rem;
+}
+
+@media (max-width:480px){
+  h1 { font-size:1.5rem; }
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="logo">
+    <!-- GANTI DENGAN LOGO WEBSITE-MU -->
+    <img src="gambar/logo toko/logo.jpg" alt="Logo Perusahaan" />
+  </div>
+
+  <!-- GANTI NAMA PERUSAHAAN -->
+  <h1>PASARBAKO<br/>SEDANG MAINTENANCE</h1>
+
+  <p class="subtitle">
+    Kami sedang melakukan perbaikan dan peningkatan sistem agar layanan menjadi lebih baik.
+    Mohon tunggu, website akan segera kembali online. Terima kasih atas kesabaran Anda 🙏
+  </p>
+
+  <div class="countdown-box" id="countdown">
+    ⏳ Maintenance selesai dalam: menghitung...
+  </div>
+
+  <div class="buttons">
+    <!-- GANTI NOMOR WHATSAPP PERUSAHAAN -->
+    <a class="whatsapp-btn" id="waLink" href="#" target="_blank">
+      💬 Hubungi kami via WhatsApp
+    </a>
+
+    <!-- Tombol Auto Refresh -->
+    <button type="button" class="refresh-btn" id="refreshBtn">
+      🔄 Aktifkan Auto Refresh
+    </button>
+    <div class="refresh-status" id="refreshStatus">
+      Auto refresh tidak aktif.
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; <span id="year"></span> PASARBAKO. Semua Hak Dilindungi.
+  </div>
+</div>
+
+<!-- Popup notifikasi selesai -->
+<div class="modal-overlay" id="finishModal">
+  <div class="modal">
+    <div class="modal-title">✅ Maintenance Selesai</div>
+    <div class="modal-body">
+      Website utama sudah kembali online.<br/>
+      Anda bisa memuat ulang halaman sekarang.
+    </div>
+    <div>
+      <button class="btn-primary" id="reloadNow">Muat Ulang Sekarang</button>
+      <button class="btn-secondary" id="closeModal">Nanti Saja</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== KONFIGURASI (SILAKAN SESUAIKAN) ===== //
+
+// GANTI NOMOR WHATSAPP
+const waNumber = "6282114527948"; // contoh: 6282114527948 (tanpa +)
+
+// GANTI ESTIMASI SELESAI MAINTENANCE
+// format: "YYYY-MM-DDTHH:MM:SS"
+const selesaiMaintenance = "2025-12-03T16:30:00";
+
+// INTERVAL AUTO REFRESH (DETIK)
+const refreshIntervalSeconds = 30; // ganti ke 10, 20, 60, dll sesuai kebutuhan
+
+// ===== SETUP WHATSAPP LINK ===== //
+document.getElementById("waLink").href = "https://wa.me/" + waNumber;
+
+// ===== COUNTDOWN MAINTENANCE ===== //
+const targetTime = new Date(selesaiMaintenance).getTime();
+const countdownEl = document.getElementById("countdown");
+const modal = document.getElementById("finishModal");
+const reloadBtn = document.getElementById("reloadNow");
+const closeModalBtn = document.getElementById("closeModal");
+
+const countdownTimer = setInterval(() => {
+  const now = new Date().getTime();
+  const selisih = targetTime - now;
+
+  if (selisih <= 0) {
+    clearInterval(countdownTimer);
+    countdownEl.innerHTML = "✅ Maintenance diperkirakan sudah selesai.";
+    showFinishModal();
+    return;
+  }
+
+  const jam = Math.floor(selisih / (1000 * 60 * 60));
+  const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+  const detik = Math.floor((selisih % (1000 * 60)) / 1000);
+
+  countdownEl.innerHTML =
+    "⏳ Maintenance selesai dalam: " +
+    jam + " jam " +
+    menit + " menit " +
+    detik + " detik";
+}, 1000);
+
+// ===== POPUP NOTIFIKASI SELESAI ===== //
+function showFinishModal() {
+  modal.classList.add("show");
+}
+function hideFinishModal() {
+  modal.classList.remove("show");
+}
+
+reloadBtn.addEventListener("click", () => {
+  location.reload();
+});
+closeModalBtn.addEventListener("click", () => {
+  hideFinishModal();
+});
+
+// ===== AUTO REFRESH BUTTON ===== //
+let refreshTimer = null;
+let refreshActive = false;
+let nextRefreshAt = null;
+
+const refreshBtn = document.getElementById("refreshBtn");
+const refreshStatus = document.getElementById("refreshStatus");
+
+function updateRefreshStatus() {
+  if (!refreshActive || !nextRefreshAt) {
+    refreshStatus.textContent = "Auto refresh tidak aktif.";
+    return;
+  }
+  const now = Date.now();
+  const sisa = Math.max(0, Math.round((nextRefreshAt - now) / 1000));
+  refreshStatus.textContent =
+    "Auto refresh aktif. Halaman akan di-refresh otomatis setiap " +
+    refreshIntervalSeconds + " detik (sisa " + sisa + " detik).";
+}
+
+function startAutoRefresh() {
+  refreshActive = true;
+  refreshBtn.textContent = "⏸ Matikan Auto Refresh";
+  nextRefreshAt = Date.now() + refreshIntervalSeconds * 1000;
+
+  if (refreshTimer) clearInterval(refreshTimer);
+
+  refreshTimer = setInterval(() => {
+    const now = Date.now();
+    if (now >= nextRefreshAt) {
+      location.reload();
+    } else {
+      updateRefreshStatus();
+    }
+  }, 1000);
+
+  updateRefreshStatus();
+}
+
+function stopAutoRefresh() {
+  refreshActive = false;
+  refreshBtn.textContent = "🔄 Aktifkan Auto Refresh";
+  if (refreshTimer) clearInterval(refreshTimer);
+  refreshTimer = null;
+  nextRefreshAt = null;
+  updateRefreshStatus();
+}
+
+refreshBtn.addEventListener("click", () => {
+  if (refreshActive) {
+    stopAutoRefresh();
+  } else {
+    startAutoRefresh();
+  }
+});
+
+// ===== Tahun Otomatis ===== //
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
