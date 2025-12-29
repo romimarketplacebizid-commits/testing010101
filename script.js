@@ -396,6 +396,154 @@ window.produkList = [
       "Ukuran: Mild 1 klik · Rasa ANGGUR · Isi 30 gr · Quality Premium."
     ],
   },
+  {
+    nama: "MILD 1 KLIK RASA APPLE 30gr",
+    merk: "MILD",
+    rasa: "Apple",
+    isi: 170,
+    harga: 13000,
+    stok: 1000,
+    berat: 30,
+    kategori: "BUSA / FILTER / SPONS",
+    gambar: [
+      "gambar/BUSA/BUSA_APPLE/IMG-20251122-WA0079.jpg",
+      "gambar/BUSA/BUSA_APPLE/IMG-20251122-WA0079.jpg",
+    ],
+    deskripsi: [
+      "Nikmati Citarasa Lintingan Sendiri.",
+      "Nyalakan Semangat Mu...",
+      "Bangkitkan Inspirasi Mu...",
+      "Happy Kaum Lintingers...",
+      "Ukuran: Mild 1 klik · Rasa APPLE · Isi 30 gr · Quality Premium."
+    ],
+  },
+  {
+    nama: "MILD 1 KLIK RASA BLUEBERRY 30gr",
+    merk: "MILD",
+    rasa: "Blueberry",
+    isi: 170,
+    harga: 13000,
+    stok: 1000,
+    berat: 30,
+    kategori: "BUSA / FILTER / SPONS",
+    gambar: [
+      "gambar/BUSA/BUSA_BLUBERRY/IMG-20251122-WA0084.jpg",
+      "gambar/BUSA/BUSA_BLUBERRY/IMG-20251122-WA0077.jpg",
+    ],
+    deskripsi: [
+      "Nikmati Citarasa Lintingan Sendiri.",
+      "Nyalakan Semangat Mu...",
+      "Bangkitkan Inspirasi Mu...",
+      "Happy Kaum Lintingers...",
+      "Ukuran: Mild 1 klik · Rasa BLUEBERRY · Isi 30 gr · Quality Premium."
+    ],
+  },
+  {
+    nama: "MILD 1 KLIK RASA BUBLEGUME PREMIUM 30gr",
+    merk: "MILD",
+    rasa: "Bublegum Premium",
+    isi: 170,
+    harga: 13000,
+    stok: 1000,
+    berat: 30,
+    kategori: "BUSA / FILTER / SPONS",
+    gambar: [
+      "gambar/BUSA/BUSA_BUBLEGUME_PREMIUM/IMG-20251122-WA0083.jpg",
+      "gambar/BUSA/BUSA_BUBLEGUME_PREMIUM/IMG-20251122-WA0075.jpg",
+    ],
+    deskripsi: [
+      "Nikmati Citarasa Lintingan Sendiri.",
+      "Nyalakan Semangat Mu...",
+      "Bangkitkan Inspirasi Mu...",
+      "Happy Kaum Lintingers...",
+      "Ukuran: Mild 1 klik · Rasa BUBLEGUM PREMIUM · Isi 30 gr · Quality Premium."
+    ],
+  },
+  {
+    nama: "MILD 1 KLIK RASA MANGGA 30gr",
+    merk: "MILD",
+    rasa: "Mangga",
+    isi: 170,
+    harga: 13000,
+    stok: 1000,
+    berat: 30,
+    kategori: "BUSA / FILTER / SPONS",
+    gambar: [
+      "gambar/BUSA/BUSA_MANGGA/IMG-20251122-WA0085.jpg",
+      "gambar/BUSA/BUSA_MANGGA/IMG-20251122-WA0071.jpg",
+    ],
+    deskripsi: [
+      "Nikmati Citarasa Lintingan Sendiri.",
+      "Nyalakan Semangat Mu...",
+      "Bangkitkan Inspirasi Mu...",
+      "Happy Kaum Lintingers...",
+      "Ukuran: Mild 1 klik · Rasa MANGGA · Isi 30 gr · Quality Premium."
+    ],
+  },
+  {
+    nama: "MILD 1 KLIK RASA MELON 30gr",
+    merk: "MILD",
+    rasa: "Melon",
+    isi: 170,
+    harga: 13000,
+    stok: 1000,
+    berat: 30,
+    kategori: "BUSA / FILTER / SPONS",
+    gambar: [
+      "gambar/BUSA/BUSA_MELON/IMG-20251122-WA0082.jpg",
+      "gambar/BUSA/BUSA_MELON/IMG-20251122-WA0073.jpg",
+    ],
+    deskripsi: [
+      "Nikmati Citarasa Lintingan Sendiri.",
+      "Nyalakan Semangat Mu...",
+      "Bangkitkan Inspirasi Mu...",
+      "Happy Kaum Lintingers...",
+      "Ukuran: Mild 1 klik · Rasa MELON · Isi 30 gr · Quality Premium."
+    ],
+  },
+  {
+    nama: "MILD 1 KLIK RASA NANAS 30gr",
+    merk: "MILD",
+    rasa: "Nanas",
+    isi: 170,
+    harga: 13000,
+    stok: 1000,
+    berat: 30,
+    kategori: "BUSA / FILTER / SPONS",
+    gambar: [
+      "gambar/BUSA/BUSA_NANAS/IMG-20251122-WA0086.jpg",
+      "gambar/BUSA/BUSA_NANAS/IMG-20251122-WA0078.jpg",
+    ],
+    deskripsi: [
+      "Nikmati Citarasa Lintingan Sendiri.",
+      "Nyalakan Semangat Mu...",
+      "Bangkitkan Inspirasi Mu...",
+      "Happy Kaum Lintingers...",
+      "Ukuran: Mild 1 klik · Rasa NANAS · Isi 30 gr · Quality Premium."
+    ],
+  },
+  {
+    nama: "MILD 1 KLIK RASA STRAWBERRY 30gr",
+    merk: "MILD",
+    rasa: "Strawberry",
+    isi: 170,
+    harga: 13000,
+    stok: 1000,
+    berat: 30,
+    kategori: "BUSA / FILTER / SPONS",
+    gambar: [
+      "gambar/BUSA/BUSA_STRAWBERRY/IMG-20251122-WA0081.jpg",
+      "gambar/BUSA/BUSA_STRAWBERY/IMG-20251122-WA0072.jpg",
+    ],
+    deskripsi: [
+      "Nikmati Citarasa Lintingan Sendiri.",
+      "Nyalakan Semangat Mu...",
+      "Bangkitkan Inspirasi Mu...",
+      "Happy Kaum Lintingers...",
+      "Ukuran: Mild 1 klik · Rasa STRAWBERRY · Isi 30 gr · Quality Premium."
+    ],
+  },
+
 
   /* ===========================
      AKSESORIS
